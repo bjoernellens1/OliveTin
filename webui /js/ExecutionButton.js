@@ -18,11 +18,35 @@ class ExecutionButton extends window.HTMLElement {
   }
 
   show () {
-    if (typeof (window.executionDialog) === 'undefined') {
+    if (window.executionDialog === undefined) {
       window.executionDialog = new ExecutionDialog()
     }
 
-    window.executionDialog.show(this.executionUuid)
+    const executionStatusArgs = {
+      executionUuid: this.executionUuid
+    }
+
+    window.executionDialog.constructFromJson(this.executionUuid)
+    window.executionDialog.show()
+
+    window.fetch(window.restBaseUrl + 'ExecutionStatus', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(executionStatusArgs)
+    }).then((res) => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error(res.statusText)
+      }
+    }
+    ).then((json) => {
+      window.executionDialog.renderResult(json)
+    }).catch(err => {
+      window.executionDialog.renderError(err)
+    })
   }
 
   onFinished (LogEntry) {

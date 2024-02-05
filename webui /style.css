@@ -130,16 +130,16 @@ legend {
   padding-top: 1em;
 }
 
-span.icon {
+span[role="icon"] {
   display: block;
   font-size: 3em;
+  vertical-align: middle;
 }
 
-.action-header span.icon,
-tr.log-row span.icon {
+.action-header span[role="icon"],
+tr.log-row span[role="icon"] {
   display: inline-block;
   padding-right: 0.2em;
-  vertical-align: middle;
 }
 
 .error {
@@ -165,9 +165,9 @@ div.entity {
 }
 
 h2 {
-  display: inline-block;
-  font-size: 1em;
   margin-top: 0;
+  font-size: 1em;
+  display: inline-block;
 }
 
 div.entity h2 {
@@ -234,7 +234,7 @@ action-button details summary div span:first-child {
   border-left: 1px solid #666;
   border-right: 1px solid #666;
   border-bottom: 1px solid #666;
-  overflow: auto;
+  overflow: scroll;
 }
 
 execution-button {
@@ -296,7 +296,6 @@ input[type="submit"]:disabled {
 .action-blocked {
   transition: 1s;
   background-color: purple;
-  color: white;
 }
 
 img.logo {
@@ -506,4 +505,30 @@ div.toolbar * {
   div.toolbar {
     background-color: black;
   }
+}
+
+#LINK:link{
+    margin: 5px;
+    position: fixed;
+    bottom: 0;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    border-color: rgb(19, 114, 104);
+    border-style: solid;
+
+    
+    line-height: 1.5;
+    padding-right: 3px;
+    padding-left: 3px;
+    text-decoration: underline;
+}
+
+#LINK:visited{
+    color: rgb(92, 92, 92);
+    text-decoration: none;
+}
+
+#LINK:hover{
+    font-weight: bold;
 }
