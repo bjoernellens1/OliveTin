@@ -52,7 +52,7 @@ require (
 	github.com/go-toolsmith/typep v1.1.0 // indirect
 	github.com/gofrs/uuid/v5 v5.0.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang/glog v1.1.2 // indirect
+	github.com/golang/glog v1.2.4 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-containerregistry v0.16.1 // indirect
 	github.com/google/pprof v0.0.0-20230808223545-4887780b67fb // indirect
